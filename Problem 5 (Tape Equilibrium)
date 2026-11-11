@@ -1,0 +1,21 @@
+def Q5(A):
+  N = len(A) #setting the length of A, where N is the elements in the array
+  total_sum = sum(A) #declaring the sums of A as total sum
+
+  left_sum = 0
+  minDifference = float('inf') #float('inf') gets the lowest difference first and apparently stops my errors
+
+  for P in range(0,(N-1)):
+    left_sum = left_sum + A[P]
+    right_sum = total_sum - left_sum
+#as the for loop iterates through the array, it reevaluates what the new difference will be
+
+    newDifference = abs(left_sum - right_sum) #makes sure that the value is absolute
+    if minDifference > newDifference:
+      minDifference = newDifference
+
+  return minDifference
+
+example = [74,12,12,40,29] #An sample array
+difference = Q5(example)
+print(str(difference)) #print statement
