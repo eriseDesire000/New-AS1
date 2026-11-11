@@ -1,0 +1,19 @@
+def Q4(A):
+  N = len(A) #setting the length of A, where N is the elements in the array
+  if not (0 <= N <= 100000):
+    raise ValueError("N must range from 0 to 100,000.") #honestly this line is only needed if it was based on user input but its the thought that counts
+
+  elements = N + 1
+  sum = (elements * (elements + 1)) / 2 #uses Guass's trick to calculate sum of every element in the array
+  new_Sum = 0
+  for i in range(0, (N)): #specifically loops until it completes the last index
+    new_Sum = new_Sum + A[i]
+
+  missing_Element = sum - new_Sum
+  return missing_Element #finds missing element by getting the sum of all elements with Guass's trick and subtracts by the counted sums
+
+example = [4,1,5,2,7,3,8,9] #An sample array
+
+missingNum = Q4(example)
+
+print("The missing element: " + str(missingNum)) # print statement
