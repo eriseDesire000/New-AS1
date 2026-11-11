@@ -1,0 +1,19 @@
+def Q1(A,K):
+  N = len(A)
+  if N == 0: #if the array DNE then thats that
+   return A
+
+  new_k = (K % N)
+  if new_k == 0: #if theres an reminder then to save time, it would use that reminder
+   return A
+
+  array =[0]* N #should create the new array
+  for i in range(0,(N)): #loops through N elements
+    updIndex = (i + new_k)%N
+    array[updIndex] = A[i]
+  return array
+
+A = [71,72,73,74,75,77,177,277,377] #An sample array
+K = 3 #describing the amount of rotations
+afterRotation = Q1(A,K) #calls to the function
+print("After 3 rotations, the array (A) is " + str(afterRotation)) #final print statement
