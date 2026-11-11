@@ -16,4 +16,4 @@ example = [4,1,5,2,7,3,8,9] #An sample array
 
 missingNum = Q4(example)
 
-print("The missing element: " + str(missingNum)) # print statement
+print("The missing element: " + str(missingNum)) # print statement 
