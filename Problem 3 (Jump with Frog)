@@ -1,0 +1,18 @@
+def Q3(X, Y, D):
+  distance = Y - X #so basically the distance from point A to point B
+  if distance <= 0:
+    return 0
+  total_jumps = (distance//D) #use // for an whole integer since the values used will produce an approximate
+
+  if X < 1 or Y < 1 or D < 1 or X > 1000000000 or Y > 1000000000 or D > 1000000000:  #letting X,Y,D be within reasonable restriction
+    return -1
+
+  if (distance%D) > 0:
+    total_jumps += 1
+    return total_jumps #total jumps that it would literally take for reach Y
+
+#sample values
+X = 34
+Y = 109
+D = 13
+print(Q3(X,Y,D)) #final print statement
