@@ -1,0 +1,16 @@
+def Q8(A):
+  east_car = 0
+  west_car = 0
+  passing_pairs = 0 #declaring variables
+  for car in A: #i couldn't do for each but this works
+    if car == 0: #tracking the amount of east cars
+      east_car = east_car + 1
+    else: #a west car that has passed an east car
+      passing_pairs = passing_pairs + east_car
+
+  if passing_pairs > 1000000000: #the requested limit
+    return -1
+  return passing_pairs
+
+sample = [1,1,0,1,1,0,1,1,1,1,0]
+print(Q8(sample)) #final printing statement
